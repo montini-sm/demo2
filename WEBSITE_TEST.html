@@ -11,6 +11,7 @@
   align-items: center;
   font-size: 15px;
   margin-right: 0px;
+  margin-top: 15px;
 }
 
 .Login:hover {
@@ -31,7 +32,76 @@
   transform: scale(0.95);
 }
 
+
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+  max-width: 180px;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ac0505;
+  outline: 0;
+  font-size: 17px;
+  color:#cfef00;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  margin-top: 20px;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9f7802;
+  pointer-events: none;
+}
+
+.form__field:focus {
+  padding-bottom: 4px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #aa7e05, #5D3294);
+  border-image-slice: 1;
+  
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9d7601;
+  font-weight: 700;
+}
+
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
 </style>
+
+<body style="background-color:rgb(0, 0, 0)">
+
+
 
 
 <button class="Login" style="float: right">
@@ -50,3 +120,14 @@
     ></path>
   </svg>
 </button>
+
+
+<div class="form__group field">
+  <input required="" placeholder="Name" class="form__field" type="input">
+  <label class="form__label" for="name">Ask our AI Llama Here &darr;</label>
+</div>
+
+
+
+
+</body>
